@@ -16,7 +16,8 @@ from tqdm import tqdm
 import facefusion.globals
 from facefusion import wording
 
-TEMP_DIRECTORY_PATH = os.path.join(tempfile.gettempdir(), 'facefusion')
+#TEMP_DIRECTORY_PATH = os.path.join(tempfile.gettempdir(), 'facefusion') 
+TEMP_DIRECTORY_PATH = 'temp'
 TEMP_OUTPUT_NAME = 'temp.mp4'
 
 # monkey patch ssl
@@ -106,7 +107,9 @@ def get_temp_frame_paths(target_path : str) -> List[str]:
 
 def get_temp_directory_path(target_path : str) -> str:
 	target_name, _ = os.path.splitext(os.path.basename(target_path))
-	return os.path.join(TEMP_DIRECTORY_PATH, target_name)
+	# added one line below for target_directory_path
+	target_directory_path=os.path.dirname(target_path) 
+	return os.path.join(target_directory_path,TEMP_DIRECTORY_PATH, target_name)
 
 
 def get_temp_output_path(target_path : str) -> str:
