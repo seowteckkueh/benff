@@ -19,7 +19,8 @@ from facefusion.vision import detect_fps
 
 #TEMP_DIRECTORY_PATH = os.path.join(tempfile.gettempdir(), 'facefusion') 
 TEMP_DIRECTORY_PATH = 'temp'
-TEMP_OUTPUT_NAME = 'temp.mp4'
+TEMP_OUTPUT_VIDEO_NAME = 'temp.mp4'
+#TEMP_OUTPUT_NAME = 'temp.mp4'
 
 # monkey patch ssl
 if platform.system().lower() == 'darwin':
